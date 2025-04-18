@@ -1,0 +1,16 @@
+get http://localhost:8000
+###
+get http://localhost:8000/info
+
+###
+get http://localhost:8000/param/20
+
+###
+get http://localhost:8000/query
+
+###
+post http://localhost:8000/hello
+
+
+###
+post http://localhost:3000/nations/4

@@ -105,6 +105,7 @@ app.post("/nations", (req, res) => {
   });
 }); // '' path로 ()=>{}요청이 들어오면 아래 코드로 응답해줘
 
+
 app.put("/nations/:id", (req, res) => {
   const { id, name, capital, population } = req.body;
   console.log(req.body);
