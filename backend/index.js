@@ -1,14 +1,18 @@
 import express from "express";
 import mysql from "mysql";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express(); // 가게 오픈
 const port = 3000;
+const host = process.env.DB_HOST;
+
 const db = mysql.createConnection({
-  host: host,
-  port: 3306,
-  user: "user_ex",
-  password: "1111",
-  database: "backend",
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_SCHEMAS,
 });
 
 db.connect((err) => {
@@ -104,7 +108,6 @@ app.post("/nations", (req, res) => {
     }
   });
 }); // '' path로 ()=>{}요청이 들어오면 아래 코드로 응답해줘
-
 
 app.put("/nations/:id", (req, res) => {
   const { id, name, capital, population } = req.body;
