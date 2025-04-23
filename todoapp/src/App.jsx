@@ -19,6 +19,7 @@ function App() {
     };
     setId((id) => id + 1);
     setTodolist([...todolist, todoitem]);
+    setTodo("");
   };
 
   return (
